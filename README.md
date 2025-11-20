@@ -1,37 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Project: Run & Lift Dashboard
 
-## Getting Started
+Run & Lift Dashboard is a fitness analytics UI that brings my running and strength training into a single, focused view. The dashboard shows weekly mileage, recent runs, Les Mills–style strength sessions, and a simple “Today’s Plan” checklist so the user always knows what’s next.
 
-First, run the development server:
+I built this as a front-end–focused project to practice designing a real-world dashboard layout with modern React tooling. The app uses the Next.js App Router with TypeScript and Tailwind CSS for styling. Data is currently mocked in a typed runLiftData.ts module so it can easily be swapped for a real API later.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+From a UI perspective, I leaned into a dark, neon-accented fitness theme with rounded cards, soft shadows, and subtle glassmorphism. Components like Card, Metric, Chip, and StreakMetric live in a shared components/dashboard folder, which keeps the page file small and the design system reusable. I added motion with Framer Motion so each card eases into view, which makes the dashboard feel more like a polished product and less like a static mockup.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For the running analytics, I integrated Recharts to render a responsive bar chart of daily mileage. A simple “This Week / Last Week” toggle swaps between two typed WeeklyRunning data sets, updating both the metrics and the chart. This shows how I handle UI state, data modeling, and interactive visualization in a clean, composable way.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tech highlights:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js (App Router) + TypeScript for structure, routing, and type safety
 
-## Learn More
+Tailwind CSS for rapid, utility-first styling and consistent spacing/typography
 
-To learn more about Next.js, take a look at the following resources:
+Framer Motion for subtle card entrance animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Recharts for responsive, interactive daily mileage charts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Lucide React for lightweight iconography in chips and task lists
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# run-lift-dashboard
+Modular dashboard components for a layout that’s easy to extend and refactor

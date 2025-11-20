@@ -1,5 +1,3 @@
-// data/runLiftData.ts
-
 export type DayMiles = {
   day: string;
   miles: number;
@@ -45,12 +43,28 @@ export type TodaysPlan = {
   tasks: Task[];
 };
 
+export type PaceZone = {
+  label: string;
+  range: string; // e.g. "8:30–9:30 /mi"
+  miles: number;
+};
+
 export type Streaks = {
   runningStreakDays: number;
   strengthDaysThisWeek: number;
   weeklyWorkouts: number;
 };
 
+export const paceZones: PaceZone[] = [
+  { label: "Recovery", range: "11:30+ /mi", miles: 4.2 },
+  { label: "Easy", range: "10:30–11:30 /mi", miles: 6.8 },
+  { label: "Steady", range: "9:45–10:30 /mi", miles: 3.0 },
+  { label: "Tempo", range: "8:45–9:45 /mi", miles: 1.5 },
+  { label: "Speed", range: "< 8:45 /mi", miles: 0.9 },
+];
+
+
+// THIS WEEK
 export const weeklyRunning: WeeklyRunning = {
   weekOf: "2025-11-17",
   totalMiles: 16.4,
@@ -64,6 +78,24 @@ export const weeklyRunning: WeeklyRunning = {
     { day: "Thu", miles: 4.0 },
     { day: "Fri", miles: 0 },
     { day: "Sat", miles: 3.1 },
+    { day: "Sun", miles: 0 },
+  ],
+};
+
+// LAST WEEK – mock data for toggle
+export const lastWeekRunning: WeeklyRunning = {
+  weekOf: "2025-11-10",
+  totalMiles: 12.3,
+  avgPace: "10:58",
+  longestRun: 5.0,
+  totalTime: "2:16:45",
+  days: [
+    { day: "Mon", miles: 3.0 },
+    { day: "Tue", miles: 0 },
+    { day: "Wed", miles: 4.0 },
+    { day: "Thu", miles: 0 },
+    { day: "Fri", miles: 2.3 },
+    { day: "Sat", miles: 3.0 },
     { day: "Sun", miles: 0 },
   ],
 };
