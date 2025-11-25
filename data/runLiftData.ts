@@ -43,26 +43,26 @@ export type TodaysPlan = {
   tasks: Task[];
 };
 
-export type PaceZone = {
-  label: string;
-  range: string; // e.g. "8:30–9:30 /mi"
-  miles: number;
-};
-
 export type Streaks = {
   runningStreakDays: number;
   strengthDaysThisWeek: number;
   weeklyWorkouts: number;
 };
 
-export const paceZones: PaceZone[] = [
-  { label: "Recovery", range: "11:30+ /mi", miles: 4.2 },
-  { label: "Easy", range: "10:30–11:30 /mi", miles: 6.8 },
-  { label: "Steady", range: "9:45–10:30 /mi", miles: 3.0 },
-  { label: "Tempo", range: "8:45–9:45 /mi", miles: 1.5 },
-  { label: "Speed", range: "< 8:45 /mi", miles: 0.9 },
-];
+export type PaceZone = {
+  label: string;
+  range: string; // e.g. "8:30–9:30 /mi"
+  miles: number;
+};
 
+export type MonthlySummary = {
+  monthLabel: string; // e.g. "November 2025"
+  totalMiles: number;
+  totalStrengthSessions: number;
+  avgRunsPerWeek: number;
+  avgStrengthPerWeek: number;
+  longestRun: number;
+};
 
 // THIS WEEK
 export const weeklyRunning: WeeklyRunning = {
@@ -171,4 +171,23 @@ export const streaks: Streaks = {
   runningStreakDays: 4,
   strengthDaysThisWeek: 3,
   weeklyWorkouts: 5,
+};
+
+// Pace zones for donut chart
+export const paceZones: PaceZone[] = [
+  { label: "Recovery", range: "11:30+ /mi", miles: 4.2 },
+  { label: "Easy", range: "10:30–11:30 /mi", miles: 6.8 },
+  { label: "Steady", range: "9:45–10:30 /mi", miles: 3.0 },
+  { label: "Tempo", range: "8:45–9:45 /mi", miles: 1.5 },
+  { label: "Speed", range: "< 8:45 /mi", miles: 0.9 },
+];
+
+// Monthly summary (for "This month" card)
+export const monthlySummary: MonthlySummary = {
+  monthLabel: "November 2025",
+  totalMiles: 52.4,
+  totalStrengthSessions: 10,
+  avgRunsPerWeek: 4.2,
+  avgStrengthPerWeek: 2.5,
+  longestRun: 9.0,
 };
